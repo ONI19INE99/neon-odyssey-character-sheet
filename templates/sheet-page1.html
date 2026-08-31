@@ -1,6 +1,6 @@
 <div class="sheet neon-odyssey page1">
 
-  <!-- ==================== DATOS BÁSICOS (CABECERA) ==================== -->
+  <!-- ==================== 1. DATOS BÁSICOS (CABECERA) ==================== -->
   <input type="text" class="field name-field" name="name" value="{{actor.name}}" placeholder="CHARACTER NAME" />
   <input type="text" class="field player-field" name="flags.neon-odyssey.player" value="{{actor.flags.neon-odyssey.player}}" placeholder="PLAYER" />
   
@@ -14,185 +14,209 @@
   <input type="text" class="field xp-field" name="system.details.xp.value" value="{{system.details.xp.value}}" placeholder="0" />
 
 
-  <!-- ==================== SECCIÓN DE COMBATE (TOP DERECHA) ==================== -->
-  <input type="number" class="field ac-field" name="system.attributes.ac.value" value="{{system.attributes.ac.value}}" placeholder="10" />
-  <input type="number" class="field speed-field" name="system.attributes.movement.walk" value="{{system.attributes.movement.walk}}" placeholder="30" />
-  <input type="text" class="field initiative-field" readonly value="{{system.attributes.init.total}}" />
+  <!-- ==================== 2. SECCIÓN DE COMBATE (TOP DERECHA) ==================== -->
+  <input type="number" class="field ac-field" name="system.attributes.ac.value" value="{{system.attributes.ac.value}}" placeholder="10" title="Armor Class" />
+  <input type="number" class="field speed-field" name="system.attributes.movement.walk" value="{{system.attributes.movement.walk}}" placeholder="30" title="Speed" />
+  <input type="text" class="field initiative-field" readonly value="{{numberFormat system.attributes.init.total sign=true}}" title="Initiative" />
 
-  <input type="text" class="field size-field" name="system.traits.size" value="{{system.traits.size}}" placeholder="Md" />
-  <input type="number" class="field inspiration-field" name="system.attributes.inspiration" value="{{system.attributes.inspiration}}" placeholder="0" />
-
-
-  <!-- ==================== ATRIBUTOS CORE (COLUMNA IZQUIERDA) ==================== -->
-  {{#each system.abilities as |ability id|}}
-  <div class="ability-group {{id}}">
-    <!-- Valor base del Atributo -->
-    <input type="number" class="field {{id}}-score" name="system.abilities.{{id}}.value" value="{{ability.value}}" />
-    <!-- Modificador calculado -->
-    <span class="field {{id}}-mod">{{numberFormat ability.mod sign=true}}</span>
-    <!-- Salvación calculada -->
-    <span class="field {{id}}-save">{{numberFormat ability.save sign=true}}</span>
-  </div>
-  {{/each}}
+  <input type="text" class="field size-field" name="system.traits.size" value="{{system.traits.size}}" placeholder="Md" title="Size" />
+  <input type="number" class="field inspiration-field" name="system.attributes.inspiration" value="{{system.attributes.inspiration}}" placeholder="0" title="Heroic Inspiration" />
 
 
-  <!-- ==================== RASTREADOR DE SALUD (MEDIO DERECHA) ==================== -->
-  <input type="number" class="field hp-current" name="system.attributes.hp.value" value="{{system.attributes.hp.value}}" placeholder="0" />
-  <input type="number" class="field hp-temp" name="system.attributes.hp.temp" value="{{system.attributes.hp.temp}}" placeholder="0" />
-  <input type="number" class="field hp-max" name="system.attributes.hp.max" value="{{system.attributes.hp.max}}" placeholder="0" />
+  <!-- ==================== 3. ATRIBUTOS CORE (COLUMNA IZQUIERDA) ==================== -->
+  <!-- Cada atributo cuenta con su valor Base, Modificador calculado y Salvación -->
+  
+  <!-- Fuerza (STR) -->
+  <input type="number" class="field str-score" name="system.abilities.str.value" value="{{system.abilities.str.value}}" />
+  <span class="field str-mod">{{numberFormat system.abilities.str.mod sign=true}}</span>
+  <span class="field str-save">{{numberFormat system.abilities.str.save sign=true}}</span>
 
-  <input type="number" class="field hit-dice-spent" name="system.attributes.hd.value" value="{{system.attributes.hd.value}}" placeholder="0" />
-  <input type="number" class="field hit-dice-max" name="system.attributes.hd.max" value="{{system.attributes.hd.max}}" placeholder="0" />
+  <!-- Destreza (DEX) -->
+  <input type="number" class="field dex-score" name="system.abilities.dex.value" value="{{system.abilities.dex.value}}" />
+  <span class="field dex-mod">{{numberFormat system.abilities.dex.mod sign=true}}</span>
+  <span class="field dex-save">{{numberFormat system.abilities.dex.save sign=true}}</span>
 
-  <input type="number" class="field death-saves-success" name="system.attributes.death.success" value="{{system.attributes.death.success}}" placeholder="0" />
-  <input type="number" class="field death-saves-failure" name="system.attributes.death.failure" value="{{system.attributes.death.failure}}" placeholder="0" />
+  <!-- Constitución (CON) -->
+  <input type="number" class="field con-score" name="system.abilities.con.value" value="{{system.abilities.con.value}}" />
+  <span class="field con-mod">{{numberFormat system.abilities.con.mod sign=true}}</span>
+  <span class="field con-save">{{numberFormat system.abilities.con.save sign=true}}</span>
+
+  <!-- Inteligencia (INT) -->
+  <input type="number" class="field int-score" name="system.abilities.int.value" value="{{system.abilities.int.value}}" />
+  <span class="field int-mod">{{numberFormat system.abilities.int.mod sign=true}}</span>
+  <span class="field int-save">{{numberFormat system.abilities.int.save sign=true}}</span>
+
+  <!-- Sabiduría (WIS) -->
+  <input type="number" class="field wis-score" name="system.abilities.wis.value" value="{{system.abilities.wis.value}}" />
+  <span class="field wis-mod">{{numberFormat system.abilities.wis.mod sign=true}}</span>
+  <span class="field wis-save">{{numberFormat system.abilities.wis.save sign=true}}</span>
+
+  <!-- Carisma (CHA) -->
+  <input type="number" class="field cha-score" name="system.abilities.cha.value" value="{{system.abilities.cha.value}}" />
+  <span class="field cha-mod">{{numberFormat system.abilities.cha.mod sign=true}}</span>
+  <span class="field cha-save">{{numberFormat system.abilities.cha.save sign=true}}</span>
 
 
-  <!-- ==================== VALORES PASIVOS (INFERIOR IZQUIERDA) ==================== -->
-  <span class="field proficiency-bonus">{{numberFormat system.attributes.prof sign=true}}</span>
-  <span class="field passive-perception">{{system.skills.prc.passive}}</span>
-
-
-  <!-- ==================== LISTA DE HABILIDADES (SKILLS) ==================== -->
-  <!-- Mapeo exacto de las habilidades tradicionales y las cyberpunk (com/tec) -->
-  <div class="skills-list">
-    {{#each system.skills as |skill id|}}
-    <div class="skill-row {{id}}">
-      <input type="checkbox" class="skill-prof" name="system.skills.{{id}}.value" {{checked skill.value}} />
-      <span class="skill-name">{{skill.label}}</span>
-      <span class="skill-mod">{{numberFormat skill.total sign=true}}</span>
+  <!-- ==================== 4. WEAPONS, CANTRIPS, & DAMAGE (CENTRAL) ==================== -->
+  <!-- 5 filas de rejilla completamente editables mapeadas a flags para evitar desbordes -->
+  <div class="weapons-container">
+    {{#each (range 1 5) as |index|}}
+    <div class="weapon-row row-{{index}}">
+      <input type="text" class="field w-name" name="flags.neon-odyssey.weapon{{index}}.name" value="{{lookup (lookup ../actor.flags.neon-odyssey (concat 'weapon' index)) 'name'}}" placeholder="Weapon/Program" />
+      <input type="text" class="field w-atk" name="flags.neon-odyssey.weapon{{index}}.atk" value="{{lookup (lookup ../actor.flags.neon-odyssey (concat 'weapon' index)) 'atk'}}" placeholder="+0" />
+      <input type="text" class="field w-damage" name="flags.neon-odyssey.weapon{{index}}.damage" value="{{lookup (lookup ../actor.flags.neon-odyssey (concat 'weapon' index)) 'damage'}}" placeholder="1d6" />
+      <input type="text" class="field w-notes" name="flags.neon-odyssey.weapon{{index}}.notes" value="{{lookup (lookup ../actor.flags.neon-odyssey (concat 'weapon' index)) 'notes'}}" placeholder="Notes" />
     </div>
     {{/each}}
   </div>
 
 
-  <!-- ==================== FEATURES & TRAITS (INFERIOR DERECHA) ==================== -->
-  <textarea class="field features-field" name="system.details.biography.value" placeholder="Features, cybernetics, background details and neural modifications...">{{system.details.biography.value}}</textarea>
+  <!-- ==================== 5. HEALTH TRACKER (MEDIO DERECHA) ==================== -->
+  <input type="number" class="field hp-current" name="system.attributes.hp.value" value="{{system.attributes.hp.value}}" placeholder="0" title="Current HP" />
+  <input type="number" class="field hp-temp" name="system.attributes.hp.temp" value="{{system.attributes.hp.temp}}" placeholder="0" title="Temporary HP" />
+  <input type="number" class="field hp-max" name="system.attributes.hp.max" value="{{system.attributes.hp.max}}" placeholder="0" title="Maximum HP" />
+
+  <input type="number" class="field hit-dice-spent" name="system.attributes.hd.value" value="{{system.attributes.hd.value}}" placeholder="0" title="Hit Dice Spent" />
+  <input type="number" class="field hit-dice-max" name="system.attributes.hd.max" value="{{system.attributes.hd.max}}" placeholder="0" title="Hit Dice Max" />
+
+  <input type="number" class="field death-saves-success" name="system.attributes.death.success" value="{{system.attributes.death.success}}" placeholder="0" />
+  <input type="number" class="field death-saves-failure" name="system.attributes.death.failure" value="{{system.attributes.death.failure}}" placeholder="0" />
+
+
+  <!-- ==================== 6. VALORES PASIVOS (INFERIOR IZQUIERDA) ==================== -->
+  <span class="field proficiency-bonus">{{numberFormat system.attributes.prof sign=true}}</span>
+  <span class="field passive-perception">{{system.skills.prc.passive}}</span>
+
+
+  <!-- ==================== 7. LISTADO DE SKILLS (INFERIOR IZQUIERDA) ==================== -->
+  <!-- Mapeo exacto ordenado visualmente según tu fondo sheet-page1.png -->
+  <div class="skills-list">
+    
+    <!-- Acrobatics -->
+    <div class="skill-row acr">
+      <input type="checkbox" name="system.skills.acr.value" value="1" {{checked (eq system.skills.acr.value 1)}} />
+      <span class="skill-mod">{{numberFormat system.skills.acr.total sign=true}}</span>
+    </div>
+
+    <!-- Animal Handling -->
+    <div class="skill-row ani">
+      <input type="checkbox" name="system.skills.ani.value" value="1" {{checked (eq system.skills.ani.value 1)}} />
+      <span class="skill-mod">{{numberFormat system.skills.ani.total sign=true}}</span>
+    </div>
+
+    <!-- Arcana -->
+    <div class="skill-row arc">
+      <input type="checkbox" name="system.skills.arc.value" value="1" {{checked (eq system.skills.arc.value 1)}} />
+      <span class="skill-mod">{{numberFormat system.skills.arc.total sign=true}}</span>
+    </div>
+
+    <!-- Athletics -->
+    <div class="skill-row ath">
+      <input type="checkbox" name="system.skills.ath.value" value="1" {{checked (eq system.skills.ath.value 1)}} />
+      <span class="skill-mod">{{numberFormat system.skills.ath.total sign=true}}</span>
+    </div>
+
+    <!-- Computers (Cyberpunk Custom) -->
+    <div class="skill-row com">
+      <input type="checkbox" name="system.skills.com.value" value="1" {{checked (eq system.skills.com.value 1)}} />
+      <span class="skill-mod">{{numberFormat system.skills.com.total sign=true}}</span>
+    </div>
+
+    <!-- Deception -->
+    <div class="skill-row dec">
+      <input type="checkbox" name="system.skills.dec.value" value="1" {{checked (eq system.skills.dec.value 1)}} />
+      <span class="skill-mod">{{numberFormat system.skills.dec.total sign=true}}</span>
+    </div>
+
+    <!-- History -->
+    <div class="skill-row his">
+      <input type="checkbox" name="system.skills.his.value" value="1" {{checked (eq system.skills.his.value 1)}} />
+      <span class="skill-mod">{{numberFormat system.skills.his.total sign=true}}</span>
+    </div>
+
+    <!-- Insight -->
+    <div class="skill-row ins">
+      <input type="checkbox" name="system.skills.ins.value" value="1" {{checked (eq system.skills.ins.value 1)}} />
+      <span class="skill-mod">{{numberFormat system.skills.ins.total sign=true}}</span>
+    </div>
+
+    <!-- Intimidation -->
+    <div class="skill-row itm">
+      <input type="checkbox" name="system.skills.itm.value" value="1" {{checked (eq system.skills.itm.value 1)}} />
+      <span class="skill-mod">{{numberFormat system.skills.itm.total sign=true}}</span>
+    </div>
+
+    <!-- Investigation -->
+    <div class="skill-row inv">
+      <input type="checkbox" name="system.skills.inv.value" value="1" {{checked (eq system.skills.inv.value 1)}} />
+      <span class="skill-mod">{{numberFormat system.skills.inv.total sign=true}}</span>
+    </div>
+
+    <!-- Medicine -->
+    <div class="skill-row med">
+      <input type="checkbox" name="system.skills.med.value" value="1" {{checked (eq system.skills.med.value 1)}} />
+      <span class="skill-mod">{{numberFormat system.skills.med.total sign=true}}</span>
+    </div>
+
+    <!-- Nature -->
+    <div class="skill-row nat">
+      <input type="checkbox" name="system.skills.nat.value" value="1" {{checked (eq system.skills.nat.value 1)}} />
+      <span class="skill-mod">{{numberFormat system.skills.nat.total sign=true}}</span>
+    </div>
+
+    <!-- Perception -->
+    <div class="skill-row prc">
+      <input type="checkbox" name="system.skills.prc.value" value="1" {{checked (eq system.skills.prc.value 1)}} />
+      <span class="skill-mod">{{numberFormat system.skills.prc.total sign=true}}</span>
+    </div>
+
+    <!-- Performance -->
+    <div class="skill-row prf">
+      <input type="checkbox" name="system.skills.prf.value" value="1" {{checked (eq system.skills.prf.value 1)}} />
+      <span class="skill-mod">{{numberFormat system.skills.prf.total sign=true}}</span>
+    </div>
+
+    <!-- Persuasion -->
+    <div class="skill-row pes">
+      <input type="checkbox" name="system.skills.pes.value" value="1" {{checked (eq system.skills.pes.value 1)}} />
+      <span class="skill-mod">{{numberFormat system.skills.pes.total sign=true}}</span>
+    </div>
+
+    <!-- Religion -->
+    <div class="skill-row rel">
+      <input type="checkbox" name="system.skills.rel.value" value="1" {{checked (eq system.skills.rel.value 1)}} />
+      <span class="skill-mod">{{numberFormat system.skills.rel.total sign=true}}</span>
+    </div>
+
+    <!-- Sleight of Hand -->
+    <div class="skill-row slt">
+      <input type="checkbox" name="system.skills.slt.value" value="1" {{checked (eq system.skills.slt.value 1)}} />
+      <span class="skill-mod">{{numberFormat system.skills.slt.total sign=true}}</span>
+    </div>
+
+    <!-- Stealth -->
+    <div class="skill-row ste">
+      <input type="checkbox" name="system.skills.ste.value" value="1" {{checked (eq system.skills.ste.value 1)}} />
+      <span class="skill-mod">{{numberFormat system.skills.ste.total sign=true}}</span>
+    </div>
+
+    <!-- Survival -->
+    <div class="skill-row surv">
+      <input type="checkbox" name="system.skills.sur.value" value="1" {{checked (eq system.skills.sur.value 1)}} />
+      <span class="skill-mod">{{numberFormat system.skills.sur.total sign=true}}</span>
+    </div>
+
+    <!-- Technology (Cyberpunk Custom) -->
+    <div class="skill-row tec">
+      <input type="checkbox" name="system.skills.tec.value" value="1" {{checked (eq system.skills.tec.value 1)}} />
+      <span class="skill-mod">{{numberFormat system.skills.tec.total sign=true}}</span>
+    </div>
+
+  </div>
+
+
+  <!-- ==================== 8. FEATURES & TRAITS (INFERIOR DERECHA) ==================== -->
+  <!-- Un gran cuadro multilínea con barra de desplazamiento cyberpunk -->
+  <textarea class="field features-field" name="system.details.biography.value" placeholder="CIBERPRÓTESIS INSTALADAS, HABILIDADES DE CLASE, RASGOS DE TRASFONDO Y MEJORAS DE NEUROENLACE...">{{system.details.biography.value}}</textarea>
 
 </div>
-🎨 3. Código CSS Corregido de la Página 1 (styles/sheet-page1.css)
-Este CSS utiliza un tamaño base óptimo de 800px por 1130px (proporción perfecta de una hoja A4) para garantizar la compatibilidad responsiva con Foundry VTT, distribuyendo horizontalmente los campos para que se alineen perfectamente con la gráfica de tu fondo cyberpunk
-:
-/* ==========================================================================
-   NEON ODYSSEY - HOJA DE PERSONAJE (PÁGINA 1)
-   ========================================================================== */
-
-.sheet.neon-odyssey.page1 {
-  background: url("../assets/sheet-page1.png") no-repeat center;
-  background-size: cover;
-  width: 800px;
-  height: 1130px;
-  position: relative;
-  font-family: 'Orbitron', sans-serif;
-  color: #00ffcc;
-}
-
-/* Estilo genérico para los inputs cyberpunk */
-.sheet.neon-odyssey.page1 .field {
-  position: absolute;
-  font-size: 13px;
-  color: #00ffcc;
-  background: transparent;
-  border: none;
-  text-align: center;
-  font-family: 'Orbitron', sans-serif;
-  text-shadow: 0 0 5px #00ffcc;
-}
-
-.sheet.neon-odyssey.page1 input:focus,
-.sheet.neon-odyssey.page1 textarea:focus {
-  background: rgba(0, 255, 204, 0.1);
-  box-shadow: 0 0 5px #00ffcc;
-  border-radius: 4px;
-}
-
-/* ==================== 1. DATOS BÁSICOS (CABECERA) ==================== */
-/* Distribución horizontal real en dos columnas */
-.sheet.neon-odyssey.page1 .name-field { top: 40px; left: 35px; width: 320px; text-align: left; }
-.sheet.neon-odyssey.page1 .player-field { top: 40px; left: 380px; width: 140px; }
-
-.sheet.neon-odyssey.page1 .class-field { top: 72px; left: 35px; width: 180px; text-align: left; }
-.sheet.neon-odyssey.page1 .subclass-field { top: 72px; left: 235px; width: 180px; text-align: left; }
-
-.sheet.neon-odyssey.page1 .species-field { top: 105px; left: 35px; width: 180px; text-align: left; }
-.sheet.neon-odyssey.page1 .homeworld-field { top: 105px; left: 235px; width: 180px; text-align: left; }
-
-/* Nivel y Experiencia (Extremo derecho superior) */
-.sheet.neon-odyssey.page1 .level-field { top: 50px; left: 545px; width: 50px; font-size: 20px; font-weight: bold; }
-.sheet.neon-odyssey.page1 .xp-field { top: 115px; left: 535px; width: 70px; font-size: 11px; }
-
-
-/* ==================== 2. SECCIÓN DE COMBATE (TOP DERECHA) ==================== */
-.sheet.neon-odyssey.page1 .ac-field { top: 45px; left: 625px; width: 45px; font-size: 18px; }
-.sheet.neon-odyssey.page1 .speed-field { top: 45px; left: 690px; width: 45px; font-size: 18px; }
-.sheet.neon-odyssey.page1 .initiative-field { top: 45px; left: 750px; width: 45px; font-size: 18px; }
-
-.sheet.neon-odyssey.page1 .size-field { top: 115px; left: 630px; width: 40px; }
-.sheet.neon-odyssey.page1 .inspiration-field { top: 105px; left: 690px; width: 40px; }
-
-
-/* ==================== 3. ATRIBUTOS CORE (COLUMNA IZQUIERDA) ==================== */
-/* Posicionamiento del Atributo base (.score), Modificador (.mod) y Salvación (.save) */
-
-/* Fuerza (STR) */
-.sheet.neon-odyssey.page1 .str-score { top: 172px; left: 95px; width: 35px; font-size: 16px; }
-.sheet.neon-odyssey.page1 .str-mod   { top: 180px; left: 35px; width: 30px; }
-.sheet.neon-odyssey.page1 .str-save  { top: 205px; left: 55px; width: 30px; }
-
-/* Destreza (DEX) */
-.sheet.neon-odyssey.page1 .dex-score { top: 252px; left: 95px; width: 35px; font-size: 16px; }
-.sheet.neon-odyssey.page1 .dex-mod   { top: 260px; left: 35px; width: 30px; }
-.sheet.neon-odyssey.page1 .dex-save  { top: 285px; left: 55px; width: 30px; }
-
-/* Constitución (CON) */
-.sheet.neon-odyssey.page1 .con-score { top: 332px; left: 95px; width: 35px; font-size: 16px; }
-.sheet.neon-odyssey.page1 .con-mod   { top: 340px; left: 35px; width: 30px; }
-.sheet.neon-odyssey.page1 .con-save  { top: 365px; left: 55px; width: 30px; }
-
-/* Inteligencia (INT) */
-.sheet.neon-odyssey.page1 .int-score { top: 412px; left: 95px; width: 35px; font-size: 16px; }
-.sheet.neon-odyssey.page1 .int-mod   { top: 420px; left: 35px; width: 30px; }
-.sheet.neon-odyssey.page1 .int-save  { top: 445px; left: 55px; width: 30px; }
-
-/* Sabiduría (WIS) */
-.sheet.neon-odyssey.page1 .wis-score { top: 492px; left: 95px; width: 35px; font-size: 16px; }
-.sheet.neon-odyssey.page1 .wis-mod   { top: 500px; left: 35px; width: 30px; }
-.sheet.neon-odyssey.page1 .wis-save  { top: 525px; left: 55px; width: 30px; }
-
-/* Carisma (CHA) */
-.sheet.neon-odyssey.page1 .cha-score { top: 572px; left: 95px; width: 35px; font-size: 16px; }
-.sheet.neon-odyssey.page1 .cha-mod   { top: 580px; left: 35px; width: 30px; }
-.sheet.neon-odyssey.page1 .cha-save  { top: 605px; left: 55px; width: 30px; }
-
-
-/* ==================== 4. RASTREADOR DE SALUD (DERECHA CENTRAL) ==================== */
-/* Posicionados de forma exacta en el Health Tracker de tu imagen */
-.sheet.neon-odyssey.page1 .hp-current { top: 215px; left: 635px; width: 55px; font-size: 18px; }
-.sheet.neon-odyssey.page1 .hp-temp    { top: 215px; left: 705px; width: 55px; font-size: 15px; }
-.sheet.neon-odyssey.page1 .hp-max     { top: 275px; left: 685px; width: 55px; }
-
-.sheet.neon-odyssey.page1 .hit-dice-spent { top: 215px; left: 785px; width: 50px; }
-.sheet.neon-odyssey.page1 .hit-dice-max   { top: 275px; left: 785px; width: 50px; }
-
-.sheet.neon-odyssey.page1 .death-saves-success { top: 215px; left: 865px; width: 50px; }
-.sheet.neon-odyssey.page1 .death-saves-failure { top: 275px; left: 865px; width: 50px; }
-
-
-/* ==================== 5. VALORES PASIVOS (INFERIOR IZQUIERDA) ==================== */
-.sheet.neon-odyssey.page1 .proficiency-bonus { top: 660px; left: 80px; width: 40px; font-size: 16px; }
-.sheet.neon-odyssey.page1 .passive-perception { top: 720px; left: 80px; width: 40px; font-size: 16px; }
-
-
-/* ==================== 6. PANEL DE RASGOS (DERECHA INFERIOR) ==================== */
-/* Caja de texto amplia sobre el recuadro "FEATURES & TRAITS" */
-.sheet.neon-odyssey.page1 .features-field { 
-  top: 440px; 
-  left: 400px; 
-  width: 370px; 
-  height: 610px; 
-  text-align: left;
-  padding: 12px;
-  font-size: 12px;
-  line-height: 1.6;
-  resize: none;
-}
