@@ -1,37 +1,37 @@
 <div class="sheet neon-odyssey page2">
 
-  <!-- ==================== COLUMNA 1: ENTRENAMIENTO Y EQUIPO (IZQUIERDA) ==================== -->
-  <input type="text" class="field weapons-field" name="system.traits.weaponProf.custom" value="{{system.traits.weaponProf.custom}}" placeholder="WEAPONS TRAINING" />
-  <input type="text" class="field tools-field" name="system.traits.toolProf.custom" value="{{system.traits.toolProf.custom}}" placeholder="TOOLS & PROCEDURES" />
-  <input type="text" class="field vehicles-field" name="flags.neon-odyssey.vehicles" value="{{actor.flags.neon-odyssey.vehicles}}" placeholder="VEHICLES" />
-  
-  <!-- Checkboxes de entrenamiento de armadura -->
-  <div class="armor-checkboxes">
-    <label class="armor-label"><input type="checkbox" name="flags.neon-odyssey.armor.light" {{checked actor.flags.neon-odyssey.armor.light}} /> L</label>
-    <label class="armor-label"><input type="checkbox" name="flags.neon-odyssey.armor.medium" {{checked actor.flags.neon-odyssey.armor.medium}} /> M</label>
-    <label class="armor-label"><input type="checkbox" name="flags.neon-odyssey.armor.heavy" {{checked actor.flags.neon-odyssey.armor.heavy}} /> H</label>
-    <label class="armor-label"><input type="checkbox" name="flags.neon-odyssey.armor.shields" {{checked actor.flags.neon-odyssey.armor.shields}} /> S</label>
-  </div>
+  <!-- Columnas superiores de entrenamiento... -->
 
-  <!-- Caja grande de inventario y equipo -->
-  <textarea class="field equipment-field" name="system.details.equipment" placeholder="List your standard gear, credits, ammunition, cyberdecks and physical inventory...">{{system.details.equipment}}</textarea>
+  <!-- Panel de Inventario y Equipo (Utiliza TEXTAREA) -->
+  <textarea class="field equipment-field" name="system.details.equipment" placeholder="EQUIPO, CRÉDITOS Y CIBERDECKS...">{{system.details.equipment}}</textarea>
 
+  <!-- Facciones y Reputación -->
+  <textarea class="field faction-reputation-field" name="flags.neon-odyssey.factions" placeholder="REPUTACIÓN CORPORATIVA Y SINDICATOS...">{{actor.flags.neon-odyssey.factions}}</textarea>
 
-  <!-- ==================== COLUMNA 2: GALAXIA Y FACCIONES (CENTRO) ==================== -->
-  <textarea class="field faction-reputation-field" name="flags.neon-odyssey.factions" placeholder="Corporate ties, gang reputation, syndicate pacts and galactic status...">{{actor.flags.neon-odyssey.factions}}</textarea>
-  
-  <textarea class="field galactic-notes-field" name="flags.neon-odyssey.galactic-notes" placeholder="Stellar systems, faction bases and planetary safehouses...">{{actor.flags.neon-odyssey.galactic-notes}}</textarea>
-  
-  <textarea class="field magic-items-field" name="flags.neon-odyssey.magic-items" placeholder="List attuned cyberware, relic chips, neural matrices and prototype hardware...">{{actor.flags.neon-odyssey.magic-items}}</textarea>
+  <!-- Notas Galácticas -->
+  <textarea class="field galactic-notes-field" name="flags.neon-odyssey.galactic-notes" placeholder="SISTEMAS STELLARES Y RUTAS...">{{actor.flags.neon-odyssey.galactic-notes}}</textarea>
 
+  <!-- Implantes y Objetos Mágicos -->
+  <textarea class="field magic-items-field" name="flags.neon-odyssey.magic-items" placeholder="CIBERWARE INSTALADO Y RELIQUIAS...">{{actor.flags.neon-odyssey.magic-items}}</textarea>
 
-  <!-- ==================== COLUMNA 3: RASGOS Y LENGUAJES (DERECHA) ==================== -->
-  <textarea class="field feats-field" name="flags.neon-odyssey.feats" placeholder="Class abilities, specialized cybernetic upgrades, custom perks and neural traits...">{{actor.flags.neon-odyssey.feats}}</textarea>
-  
-  <textarea class="field languages-field" name="system.traits.languages.custom" placeholder="Known dialects, data encryptions and programming languages...">{{system.traits.languages.custom}}</textarea>
+  <!-- Dotes y Profesiones -->
+  <textarea class="field feats-field" name="flags.neon-odyssey.feats" placeholder="MEJORAS NEURALES Y VENTAJAS...">{{actor.flags.neon-odyssey.feats}}</textarea>
 
+  <!-- Idiomas -->
+  <textarea class="field languages-field" name="system.traits.languages.custom" placeholder="DIALECTOS Y ENCRIPTACIONES...">{{system.traits.languages.custom}}</textarea>
 
-  <!-- ==================== SECCIÓN INFERIOR: NOTAS (ANCHO COMPLETO) ==================== -->
-  <textarea class="field notes-field" name="system.details.biography.value" placeholder="Write down your session logs, campaign developments, sector coordinates and contact networks...">{{system.details.biography.value}}</textarea>
+  <!-- Bitácora de Notas General (Ancho completo al fondo de la hoja) -->
+  <textarea class="field notes-field" name="system.details.biography.value" placeholder="NOTAS DE LA CAMPAÑA Y COORDENADAS...">{{system.details.biography.value}}</textarea>
+
+</div>
+Página 3 (templates/sheet-page3.html)
+El contenedor de Prepared Spells (.prepared-spells) cuenta con un espacio generoso de 400px de altura
+. Es el lugar ideal para que tus lanzadores de conjuros o hackers organicen sus programas activos y trucos de combate:
+<div class="sheet neon-odyssey page3">
+
+  <!-- Datos de lanzador y Matriz de slots superiores... -->
+
+  <!-- Terminal de Conjuros Preparados (Utiliza TEXTAREA) -->
+  <textarea class="field prepared-spells" name="flags.neon-odyssey.prepared-spells-list" placeholder="CONJUROS PREPARADOS, HACKS DE COMBATE Y PROGRAMAS ACTIVOS...">{{actor.flags.neon-odyssey.prepared-spells-list}}</textarea>
 
 </div>
