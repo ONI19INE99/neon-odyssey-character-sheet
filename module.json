@@ -1,7 +1,7 @@
 {
   "id": "neon-odyssey-character-sheet",
   "title": "Neon Odyssey - Character Sheet",
-  "description": "Hoja de personaje dividida en 3 páginas editables con estética cyberpunk y automatizaciones.",
+  "description": "Hoja de personaje dividida en 3 páginas editables con estética cyberpunk.",
   "version": "1.0.0",
   "compatibility": {
     "minimum": "12",
@@ -28,7 +28,5 @@
     "styles/sheet-page2.css",
     "styles/sheet-page3.css"
   ],
-  "manifest": "https://raw.githubusercontent.com/ONI19INE99/neon-odyssey-character-sheet/main/module.json",
-  "download": "https://github.com/ONI19INE99/neon-odyssey-character-sheet/releases/download/v1.0.0/neon-odyssey-character-sheet.zip",
   "license": "MIT"
 }
