@@ -1,0 +1,115 @@
+/* ==========================================================================
+   NEON ODYSSEY - HOJA DE PERSONAJE (PÁGINA 3)
+   ========================================================================= */
+
+.sheet.neon-odyssey.page3 {
+  background: url("../assets/sheet-page3.png") no-repeat center;
+  background-size: cover;
+  width: 800px;
+  height: 1130px;
+  position: relative;
+  font-family: 'Orbitron', sans-serif;
+  color: #00ffcc;
+}
+
+/* Campos de entrada e inputs cyberpunk */
+.sheet.neon-odyssey.page3 .field {
+  position: absolute;
+  font-size: 13px;
+  color: #00ffcc;
+  background: transparent;
+  border: none;
+  font-family: 'Orbitron', sans-serif;
+  text-shadow: 0 0 5px #00ffcc;
+  text-align: center;
+}
+
+.sheet.neon-odyssey.page3 input:focus,
+.sheet.neon-odyssey.page3 textarea:focus {
+  background: rgba(0, 255, 204, 0.1);
+  box-shadow: 0 0 5px #00ffcc;
+  border-radius: 4px;
+}
+
+/* ==================== 1. DATOS DE LANZADOR (TOP IZQUIERDA) ==================== */
+/* Posicionado de checkboxes de aptitud mágica */
+.sheet.neon-odyssey.page3 .spell-ability-selectors {
+  position: absolute;
+  top: 48px;
+  left: 30px;
+  width: 120px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-size: 10px;
+  text-align: left;
+}
+
+.sheet.neon-odyssey.page3 .spell-ability-selectors input {
+  accent-color: #00ffcc;
+}
+
+/* Posición horizontal de los tres diamantes gráficos en fila */
+.sheet.neon-odyssey.page3 .spell-modifier-field { top: 65px; left: 175px; width: 60px; font-size: 18px; font-weight: bold; }
+.sheet.neon-odyssey.page3 .spell-save-dc { top: 65px; left: 275px; width: 60px; font-size: 18px; font-weight: bold; }
+.sheet.neon-odyssey.page3 .spell-attack-bonus { top: 65px; left: 375px; width: 60px; font-size: 18px; font-weight: bold; }
+
+
+/* ==================== 2. MATRIZ DE SLOTS DE CONJUROS (TOP DERECHA) ==================== */
+/* Distribución horizontal de la matriz de slots en 3 columnas paralelas */
+.sheet.neon-odyssey.page3 .spell-slots-container {
+  position: absolute;
+  top: 50px;
+  left: 535px;
+  width: 235px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.sheet.neon-odyssey.page3 .slot-column {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sheet.neon-odyssey.page3 .slot-row {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.sheet.neon-odyssey.page3 .level-label {
+  font-size: 10px;
+  color: #00ffcc;
+  width: 15px;
+  font-weight: bold;
+}
+
+/* Campos de entrada para Total y Consumidos de cada nivel */
+.sheet.neon-odyssey.page3 .slot-total,
+.sheet.neon-odyssey.page3 .slot-spent {
+  width: 25px;
+  height: 18px;
+  background: transparent;
+  border: none;
+  color: #00ffcc;
+  text-shadow: 0 0 5px #00ffcc;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 12px;
+  text-align: center;
+}
+
+
+/* ==================== 3. TERMINAL DE CONJUROS PREPARADOS (INFERIOR) ==================== */
+/* Caja expandida para cubrir la totalidad de la matriz de la cuadrícula inferior */
+.sheet.neon-odyssey.page3 .prepared-spells { 
+  top: 175px; 
+  left: 35px; 
+  width: 730px; 
+  height: 885px; 
+  text-align: left;
+  padding: 15px; 
+  line-height: 1.8;
+  font-size: 12px;
+  resize: none;
+}

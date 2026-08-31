@@ -1,0 +1,131 @@
+/* ==========================================================================
+   NEON ODYSSEY - HOJA DE PERSONAJE (PÁGINA 2)
+   ========================================================================== */
+
+.sheet.neon-odyssey.page2 {
+  background: url("../assets/sheet-page2.png") no-repeat center;
+  background-size: cover;
+  width: 800px;
+  height: 1130px;
+  position: relative;
+  font-family: 'Orbitron', sans-serif;
+  color: #00ffcc;
+}
+
+/* Estilo para los inputs de texto cyberpunk */
+.sheet.neon-odyssey.page2 .field {
+  position: absolute;
+  font-size: 12px;
+  color: #00ffcc;
+  background: transparent;
+  border: none;
+  font-family: 'Orbitron', sans-serif;
+  text-shadow: 0 0 5px #00ffcc;
+  resize: none;
+}
+
+.sheet.neon-odyssey.page2 input:focus,
+.sheet.neon-odyssey.page2 textarea:focus {
+  background: rgba(0, 255, 204, 0.1);
+  box-shadow: 0 0 5px #00ffcc;
+  border-radius: 4px;
+}
+
+/* ==================== COLUMNA 1: ENTRENAMIENTO Y EQUIPO (IZQUIERDA) ==================== */
+.sheet.neon-odyssey.page2 .weapons-field { top: 52px; left: 35px; width: 230px; height: 25px; }
+.sheet.neon-odyssey.page2 .tools-field { top: 92px; left: 35px; width: 230px; height: 25px; }
+.sheet.neon-odyssey.page2 .vehicles-field { top: 132px; left: 35px; width: 230px; height: 25px; }
+
+/* Posicionamiento de los checkboxes de Armadura */
+.sheet.neon-odyssey.page2 .armor-checkboxes {
+  position: absolute;
+  top: 172px;
+  left: 35px;
+  width: 230px;
+  display: inline-flex;
+  justify-content: space-around;
+  font-size: 11px;
+}
+
+.sheet.neon-odyssey.page2 .armor-checkboxes input {
+  accent-color: #00ffcc;
+}
+
+/* Caja de Inventario / Equipamiento */
+.sheet.neon-odyssey.page2 .equipment-field { 
+  top: 215px; 
+  left: 35px; 
+  width: 230px; 
+  height: 345px; 
+  text-align: left;
+  padding: 8px;
+  line-height: 1.5;
+}
+
+
+/* ==================== COLUMNA 2: GALAXIA Y FACCIONES (CENTRO) ==================== */
+.sheet.neon-odyssey.page2 .faction-reputation-field { 
+  top: 52px; 
+  left: 285px; 
+  width: 230px; 
+  height: 240px; 
+  text-align: left;
+  padding: 8px;
+  line-height: 1.5;
+}
+
+.sheet.neon-odyssey.page2 .galactic-notes-field { 
+  top: 320px; 
+  left: 285px; 
+  width: 230px; 
+  height: 110px; 
+  text-align: left;
+  padding: 8px;
+  line-height: 1.5;
+}
+
+.sheet.neon-odyssey.page2 .magic-items-field { 
+  top: 450px; 
+  left: 285px; 
+  width: 230px; 
+  height: 110px; 
+  text-align: left;
+  padding: 8px;
+  line-height: 1.5;
+}
+
+
+/* ==================== COLUMNA 3: RASGOS Y LENGUAJES (DERECHA) ==================== */
+.sheet.neon-odyssey.page2 .feats-field { 
+  top: 52px; 
+  left: 535px; 
+  width: 230px; 
+  height: 375px; 
+  text-align: left;
+  padding: 8px;
+  line-height: 1.5;
+}
+
+.sheet.neon-odyssey.page2 .languages-field { 
+  top: 450px; 
+  left: 535px; 
+  width: 230px; 
+  height: 110px; 
+  text-align: left;
+  padding: 8px;
+  line-height: 1.5;
+}
+
+
+/* ==================== SECCIÓN INFERIOR: NOTAS (ANCHO COMPLETO) ==================== */
+/* Posicionado de forma exacta en el contenedor gráfico inferior de NOTES */
+.sheet.neon-odyssey.page2 .notes-field { 
+  top: 615px; 
+  left: 35px; 
+  width: 730px; 
+  height: 435px; 
+  text-align: left;
+  padding: 12px; 
+  font-size: 13px; 
+  line-height: 1.6;
+}

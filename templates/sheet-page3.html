@@ -1,0 +1,91 @@
+<div class="sheet neon-odyssey page3">
+
+  <!-- ==================== 1. DATOS DE LANZADOR (TOP IZQUIERDA) ==================== -->
+  <!-- Checkboxes de Aptitud Mágica (SPELLCASTING ABILITY) -->
+  <div class="spell-ability-selectors">
+    <label class="spell-ability-label">
+      <input type="radio" name="system.attributes.spellcasting" value="int" {{checked (eq system.attributes.spellcasting 'int')}} /> INT
+    </label>
+    <label class="spell-ability-label">
+      <input type="radio" name="system.attributes.spellcasting" value="wis" {{checked (eq system.attributes.spellcasting 'wis')}} /> WIS
+    </label>
+    <label class="spell-ability-label">
+      <input type="radio" name="system.attributes.spellcasting" value="cha" {{checked (eq system.attributes.spellcasting 'cha')}} /> CHA
+    </label>
+  </div>
+
+  <!-- Atributos mágicos dinámicos (CD de salvación y Bono de ataque) -->
+  <span class="field spell-modifier-field">{{numberFormat system.abilities.int.mod sign=true}}</span>
+  <span class="field spell-save-dc">{{system.attributes.spelldc}}</span>
+  <span class="field spell-attack-bonus">{{numberFormat system.attributes.spellAttack sign=true}}</span>
+
+
+  <!-- ==================== 2. MATRIZ DE SLOTS DE CONJUROS (TOP DERECHA) ==================== -->
+  <!-- Estructura de 3 columnas para Slots de Conjuros (Total y Consumidos) -->
+  <div class="spell-slots-container">
+    
+    <!-- Columna 1: Niveles 1 a 3 -->
+    <div class="slot-column col1">
+      <div class="slot-row">
+        <span class="level-label">L1</span>
+        <input type="number" name="system.spells.spell1.override" value="{{system.spells.spell1.override}}" placeholder="0" class="slot-total" />
+        <input type="number" name="system.spells.spell1.value" value="{{system.spells.spell1.value}}" placeholder="0" class="slot-spent" />
+      </div>
+      <div class="slot-row">
+        <span class="level-label">L2</span>
+        <input type="number" name="system.spells.spell2.override" value="{{system.spells.spell2.override}}" placeholder="0" class="slot-total" />
+        <input type="number" name="system.spells.spell2.value" value="{{system.spells.spell2.value}}" placeholder="0" class="slot-spent" />
+      </div>
+      <div class="slot-row">
+        <span class="level-label">L3</span>
+        <input type="number" name="system.spells.spell3.override" value="{{system.spells.spell3.override}}" placeholder="0" class="slot-total" />
+        <input type="number" name="system.spells.spell3.value" value="{{system.spells.spell3.value}}" placeholder="0" class="slot-spent" />
+      </div>
+    </div>
+
+    <!-- Columna 2: Niveles 4 a 6 -->
+    <div class="slot-column col2">
+      <div class="slot-row">
+        <span class="level-label">L4</span>
+        <input type="number" name="system.spells.spell4.override" value="{{system.spells.spell4.override}}" placeholder="0" class="slot-total" />
+        <input type="number" name="system.spells.spell4.value" value="{{system.spells.spell4.value}}" placeholder="0" class="slot-spent" />
+      </div>
+      <div class="slot-row">
+        <span class="level-label">L5</span>
+        <input type="number" name="system.spells.spell5.override" value="{{system.spells.spell5.override}}" placeholder="0" class="slot-total" />
+        <input type="number" name="system.spells.spell5.value" value="{{system.spells.spell5.value}}" placeholder="0" class="slot-spent" />
+      </div>
+      <div class="slot-row">
+        <span class="level-label">L6</span>
+        <input type="number" name="system.spells.spell6.override" value="{{system.spells.spell6.override}}" placeholder="0" class="slot-total" />
+        <input type="number" name="system.spells.spell6.value" value="{{system.spells.spell6.value}}" placeholder="0" class="slot-spent" />
+      </div>
+    </div>
+
+    <!-- Columna 3: Niveles 7 a 9 -->
+    <div class="slot-column col3">
+      <div class="slot-row">
+        <span class="level-label">L7</span>
+        <input type="number" name="system.spells.spell7.override" value="{{system.spells.spell7.override}}" placeholder="0" class="slot-total" />
+        <input type="number" name="system.spells.spell7.value" value="{{system.spells.spell7.value}}" placeholder="0" class="slot-spent" />
+      </div>
+      <div class="slot-row">
+        <span class="level-label">L8</span>
+        <input type="number" name="system.spells.spell8.override" value="{{system.spells.spell8.override}}" placeholder="0" class="slot-total" />
+        <input type="number" name="system.spells.spell8.value" value="{{system.spells.spell8.value}}" placeholder="0" class="slot-spent" />
+      </div>
+      <div class="slot-row">
+        <span class="level-label">L9</span>
+        <input type="number" name="system.spells.spell9.override" value="{{system.spells.spell9.override}}" placeholder="0" class="slot-total" />
+        <input type="number" name="system.spells.spell9.value" value="{{system.spells.spell9.value}}" placeholder="0" class="slot-spent" />
+      </div>
+    </div>
+
+  </div>
+
+
+  <!-- ==================== 3. TERMINAL DE CONJUROS PREPARADOS (INFERIOR) ==================== -->
+  <!-- Área de texto amplia para redactar los conjuros preparados de forma ordenada -->
+  <textarea class="field prepared-spells" name="flags.neon-odyssey.prepared-spells-list" placeholder="List your active programs, combat hacks, neural cantrips and prepared spells with their casting times, ranges and notes...">{{actor.flags.neon-odyssey.prepared-spells-list}}</textarea>
+
+</div>

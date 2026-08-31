@@ -1,0 +1,123 @@
+/* ==========================================================================
+   NEON ODYSSEY - HOJA DE PERSONAJE (PÁGINA 1)
+   ========================================================================== */
+
+.sheet.neon-odyssey.page1 {
+  background: url("../assets/sheet-page1.png") no-repeat center;
+  background-size: cover;
+  width: 800px;
+  height: 1130px;
+  position: relative;
+  font-family: 'Orbitron', sans-serif;
+  color: #00ffcc;
+}
+
+/* Estilo genérico para los inputs cyberpunk */
+.sheet.neon-odyssey.page1 .field {
+  position: absolute;
+  font-size: 13px;
+  color: #00ffcc;
+  background: transparent;
+  border: none;
+  text-align: center;
+  font-family: 'Orbitron', sans-serif;
+  text-shadow: 0 0 5px #00ffcc;
+}
+
+.sheet.neon-odyssey.page1 input:focus,
+.sheet.neon-odyssey.page1 textarea:focus {
+  background: rgba(0, 255, 204, 0.1);
+  box-shadow: 0 0 5px #00ffcc;
+  border-radius: 4px;
+}
+
+/* ==================== 1. DATOS BÁSICOS (CABECERA) ==================== */
+/* Distribución horizontal real en dos columnas */
+.sheet.neon-odyssey.page1 .name-field { top: 40px; left: 35px; width: 320px; text-align: left; }
+.sheet.neon-odyssey.page1 .player-field { top: 40px; left: 380px; width: 140px; }
+
+.sheet.neon-odyssey.page1 .class-field { top: 72px; left: 35px; width: 180px; text-align: left; }
+.sheet.neon-odyssey.page1 .subclass-field { top: 72px; left: 235px; width: 180px; text-align: left; }
+
+.sheet.neon-odyssey.page1 .species-field { top: 105px; left: 35px; width: 180px; text-align: left; }
+.sheet.neon-odyssey.page1 .homeworld-field { top: 105px; left: 235px; width: 180px; text-align: left; }
+
+/* Nivel y Experiencia (Extremo derecho superior) */
+.sheet.neon-odyssey.page1 .level-field { top: 50px; left: 545px; width: 50px; font-size: 20px; font-weight: bold; }
+.sheet.neon-odyssey.page1 .xp-field { top: 115px; left: 535px; width: 70px; font-size: 11px; }
+
+
+/* ==================== 2. SECCIÓN DE COMBATE (TOP DERECHA) ==================== */
+.sheet.neon-odyssey.page1 .ac-field { top: 45px; left: 625px; width: 45px; font-size: 18px; }
+.sheet.neon-odyssey.page1 .speed-field { top: 45px; left: 690px; width: 45px; font-size: 18px; }
+.sheet.neon-odyssey.page1 .initiative-field { top: 45px; left: 750px; width: 45px; font-size: 18px; }
+
+.sheet.neon-odyssey.page1 .size-field { top: 115px; left: 630px; width: 40px; }
+.sheet.neon-odyssey.page1 .inspiration-field { top: 105px; left: 690px; width: 40px; }
+
+
+/* ==================== 3. ATRIBUTOS CORE (COLUMNA IZQUIERDA) ==================== */
+/* Posicionamiento del Atributo base (.score), Modificador (.mod) y Salvación (.save) */
+
+/* Fuerza (STR) */
+.sheet.neon-odyssey.page1 .str-score { top: 172px; left: 95px; width: 35px; font-size: 16px; }
+.sheet.neon-odyssey.page1 .str-mod   { top: 180px; left: 35px; width: 30px; }
+.sheet.neon-odyssey.page1 .str-save  { top: 205px; left: 55px; width: 30px; }
+
+/* Destreza (DEX) */
+.sheet.neon-odyssey.page1 .dex-score { top: 252px; left: 95px; width: 35px; font-size: 16px; }
+.sheet.neon-odyssey.page1 .dex-mod   { top: 260px; left: 35px; width: 30px; }
+.sheet.neon-odyssey.page1 .dex-save  { top: 285px; left: 55px; width: 30px; }
+
+/* Constitución (CON) */
+.sheet.neon-odyssey.page1 .con-score { top: 332px; left: 95px; width: 35px; font-size: 16px; }
+.sheet.neon-odyssey.page1 .con-mod   { top: 340px; left: 35px; width: 30px; }
+.sheet.neon-odyssey.page1 .con-save  { top: 365px; left: 55px; width: 30px; }
+
+/* Inteligencia (INT) */
+.sheet.neon-odyssey.page1 .int-score { top: 412px; left: 95px; width: 35px; font-size: 16px; }
+.sheet.neon-odyssey.page1 .int-mod   { top: 420px; left: 35px; width: 30px; }
+.sheet.neon-odyssey.page1 .int-save  { top: 445px; left: 55px; width: 30px; }
+
+/* Sabiduría (WIS) */
+.sheet.neon-odyssey.page1 .wis-score { top: 492px; left: 95px; width: 35px; font-size: 16px; }
+.sheet.neon-odyssey.page1 .wis-mod   { top: 500px; left: 35px; width: 30px; }
+.sheet.neon-odyssey.page1 .wis-save  { top: 525px; left: 55px; width: 30px; }
+
+/* Carisma (CHA) */
+.sheet.neon-odyssey.page1 .cha-score { top: 572px; left: 95px; width: 35px; font-size: 16px; }
+.sheet.neon-odyssey.page1 .cha-mod   { top: 580px; left: 35px; width: 30px; }
+.sheet.neon-odyssey.page1 .cha-save  { top: 605px; left: 55px; width: 30px; }
+
+
+/* ==================== 4. RASTREADOR DE SALUD (DERECHA CENTRAL) ==================== */
+/* Posicionados de forma exacta en el Health Tracker de tu imagen */
+.sheet.neon-odyssey.page1 .hp-current { top: 215px; left: 635px; width: 55px; font-size: 18px; }
+.sheet.neon-odyssey.page1 .hp-temp    { top: 215px; left: 705px; width: 55px; font-size: 15px; }
+.sheet.neon-odyssey.page1 .hp-max     { top: 275px; left: 685px; width: 55px; }
+
+.sheet.neon-odyssey.page1 .hit-dice-spent { top: 215px; left: 785px; width: 50px; }
+.sheet.neon-odyssey.page1 .hit-dice-max   { top: 275px; left: 785px; width: 50px; }
+
+.sheet.neon-odyssey.page1 .death-saves-success { top: 215px; left: 865px; width: 50px; }
+.sheet.neon-odyssey.page1 .death-saves-failure { top: 275px; left: 865px; width: 50px; }
+
+
+/* ==================== 5. VALORES PASIVOS (INFERIOR IZQUIERDA) ==================== */
+.sheet.neon-odyssey.page1 .proficiency-bonus { top: 660px; left: 80px; width: 40px; font-size: 16px; }
+.sheet.neon-odyssey.page1 .passive-perception { top: 720px; left: 80px; width: 40px; font-size: 16px; }
+
+
+/* ==================== 6. PANEL DE RASGOS (DERECHA INFERIOR) ==================== */
+/* Caja de texto amplia sobre el recuadro "FEATURES & TRAITS" */
+.sheet.neon-odyssey.page1 .features-field { 
+  top: 440px; 
+  left: 400px; 
+  width: 370px; 
+  height: 610px; 
+  text-align: left;
+  padding: 12px;
+  font-size: 12px;
+  line-height: 1.6;
+  resize: none;
+}

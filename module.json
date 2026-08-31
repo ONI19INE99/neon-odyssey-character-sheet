@@ -1,0 +1,32 @@
+{
+  "id": "neon-odyssey-character-sheet",
+  "title": "Neon Odyssey - Character Sheet",
+  "description": "Hoja de personaje dividida en 3 páginas editables.",
+  "version": "1.0.0",
+  "compatibility": {
+    "minimum": "12",
+    "verified": "14"
+  },
+  "authors": [
+    {
+      "name": "Kevin"
+    }
+  ],
+  "relationships": {
+    "systems": [
+      {
+        "id": "dnd5e",
+        "type": "system"
+      }
+    ]
+  },
+  "esmodules": [
+    "scripts/extend-sheet.js"
+  ],
+  "styles": [
+    "styles/sheet-page1.css",
+    "styles/sheet-page2.css",
+    "styles/sheet-page3.css"
+  ],
+  "license": "MIT"
+}
