@@ -1,22 +1,22 @@
-// 1. Añadir las habilidades cyberpunk en la inicialización
+// 1. Registrar habilidades cyberpunk al iniciar el sistema
 Hooks.once("init", () => {
   CONFIG.DND5E.skills["com"] = { label: "Computers", ability: "int" };
   CONFIG.DND5E.skills["tec"] = { label: "Tecnología", ability: "int" };
-  console.log("Neon Odyssey | Habilidades de 5ª Edición inicializadas.");
+  console.log("Neon Odyssey | Habilidades cyberpunk añadidas con éxito.");
 });
 
-// 2. Definir y registrar la clase de la hoja personalizada al estar listos
+// 2. Definir y registrar la hoja de personaje en el sistema
 Hooks.once("ready", () => {
   const dndSheetClass = dnd5e.applications.actor.ActorSheet5eCharacter;
   if (!dndSheetClass) {
-    console.error("Neon Odyssey | No se encontró la clase base clásica de dnd5e.");
+    console.error("Neon Odyssey | No se pudo localizar la clase base de dnd5e.");
     return;
   }
 
   class NeonOdysseySheet extends dndSheetClass {
     constructor(...args) {
       super(...args);
-      this.currentNeonPage = 1; // Página inicial por defecto
+      this.currentNeonPage = 1; // Página por defecto al abrir
     }
 
     static get defaultOptions() {
@@ -28,7 +28,7 @@ Hooks.once("ready", () => {
       });
     }
 
-    // Retornar la plantilla HTML correspondiente a la página activa
+    // Cargar la plantilla HTML correspondiente a la página activa
     get template() {
       return `modules/neon-odyssey-character-sheet/templates/sheet-page${this.currentNeonPage}.html`;
     }
@@ -36,13 +36,13 @@ Hooks.once("ready", () => {
     activateListeners(html) {
       super.activateListeners(html);
 
-      // Encontrar de forma segura la cabecera en Foundry v14 (.window-app)
+      // Buscar de forma segura la cabecera en Foundry v14 (.window-app)
       const windowHeader = html.closest('.window-app').find('.window-header');
       if (!windowHeader.length) return;
 
       const windowTitle = windowHeader.find('.window-title');
 
-      // Botón para abrir el PDF interactivo (evitando duplicados)
+      // Inyectar botón de PDF (con comillas corregidas en el selector jQuery)
       if (windowHeader.find(".open-pdf").length === 0) {
         const pdfButton = $('<button type="button" class="open-pdf" style="margin-left: 10px; line-height: 16px; padding: 2px 6px;"><i class="fas fa-file-pdf"></i> PDF</button>');
         pdfButton.click(ev => {
@@ -52,7 +52,7 @@ Hooks.once("ready", () => {
         windowTitle.after(pdfButton);
       }
 
-      // Selector de páginas cyberpunk (evitando duplicados)
+      // Inyectar selector de páginas de la hoja (con comillas corregidas en jQuery)
       if (windowHeader.find(".page-selector").length === 0) {
         const pageSelector = $(`
           <div class="page-selector" style="margin-left: 10px; display: inline-flex; gap: 5px;">
@@ -73,7 +73,7 @@ Hooks.once("ready", () => {
         pageSelector.find("button").click(ev => {
           ev.preventDefault();
           this.currentNeonPage = parseInt($(ev.currentTarget).data("page"));
-          this.render(true); // Redibujar la ficha con la nueva plantilla
+          this.render(true); // Redibujar la ficha con la plantilla elegida
         });
 
         windowHeader.append(pageSelector);
@@ -81,12 +81,12 @@ Hooks.once("ready", () => {
     }
   }
 
-  // REGISTRAR LA HOJA EN EL SISTEMA DND5E DE FOUNDRY
+  // REGISTRAR LA HOJA OFICIALMENTE EN EL SISTEMA DND5E
   Actors.registerSheet("dnd5e", NeonOdysseySheet, {
     types: ["character"],
     makeDefault: false,
     label: "Neon Odyssey Character Sheet"
   });
-  
-  console.log("Neon Odyssey | Hoja de personaje registrada correctamente.");
+
+  console.log("Neon Odyssey | Hoja registrada con éxito.");
 });
